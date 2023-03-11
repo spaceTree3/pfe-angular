@@ -1,0 +1,105 @@
+<!--
+    <p>portfolio-contenido works!</p>
+<app-persona-comp></app-persona-comp>
+<app-portfolio-bio></app-portfolio-bio>
+<app-portfolio-educacion></app-portfolio-educacion>
+<app-portfolio-certificacion></app-portfolio-certificacion>
+
+-->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2" id="imagen-fila">
+            <div class="border border-success rounded" id="imagen">
+                <img class="img-fluid" [src]="profilePicPath" alt="Profile Picture">    
+            </div>        
+        </div>
+        
+        <div class="col border border-left-0 rounded" id="contenido">
+            <div class="row">
+                <div class="col">
+                    <div id="encabezado">
+                        <app-portfolio-bio [persona]="personas">
+                        </app-portfolio-bio>
+                        <p>
+                            He desarrollado varios proyectos en distintos lenguajes, utilizando variadas herramientas, dependiendo
+                            de las necesidades del problema. Me puedo comunicar tanto en ingles como en español. Soy una persona
+                            con capacidad de análisis, de trabajo en equipo, comunicativa, dispuesto a escuchar, generar ideas y
+                            aprender.
+                        </p>
+                    </div>        
+                </div>
+            </div>
+  
+            <div class="row">
+                <div class="col">
+                    <div id="objetivo">
+                        <h3>Objetivo Laboral</h3>
+                        <p>
+                            Formar parte de un ambiente que facilite el crecimiento tanto en el ámbito personal como laboral,
+                            pudiendo encarar retos de diversos tipos, adquiriendo conocimientos sobre distintas herramientas y
+                            tecnologías para poderlos aplicar en los procesos organizacionales y asi alcanzar las metas
+                            establecidas.       
+                        </p>
+                    </div>
+        
+                </div>
+            </div>
+  
+            <div class="row">
+                <div class="col">
+                    <div id="educacion">
+                        <h3>Educacion</h3>
+                        <app-portfolio-educacion [educacion]="educacion">
+                        </app-portfolio-educacion>
+                    </div>        
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">                                    
+                    <div id="habilidades">
+                        <h3>Habilidades y Conocimientos</h3>
+                        <p>Java, Spring Framework, Hibernate, HTML, SQL, Visual Basic.net, Ingles (Avanzado), Espanol (Nativo),
+                            Git, Angular, Herramientas CASE
+                        </p>
+                    </div>
+                </div>
+            </div>
+  
+            <div class="row">
+                <div class="col">                                    
+                    <div id="enlaces">
+                        <h3>Enlaces</h3>
+                        <ul list-style-type="none">
+                            <li>
+                                <a href="https://github.com/spaceTree3">
+                                    <img [src]="githubIconPath" alt="github link">
+                                    spaceTree3
+                                </a>                    
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/jose-martinez-jims">
+                                    <img [src]="linkedinIconPath" alt="linkedin link">
+                                    Jose Martinez
+                                </a>                    
+                            </li>
+        
+                        </ul>
+                    </div>
+                </div>
+            </div>
+  
+            <div class="row">
+                <div class="col">
+                    <div id="certificacion">
+                        <h3>Certificacion</h3>
+                        <app-portfolio-certificacion [certificacion]="certificacion">
+                        </app-portfolio-certificacion>
+                    </div>        
+                </div>
+            </div>
+        </div>
+  
+    </div>        
+</div>

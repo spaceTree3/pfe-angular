@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col">
+        <div id="navegacion" role="navigation">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border rounded">
+                <a class="navbar-brand" href="#">
+                    <img [src]="imagePath" class="site-icon img-fluid" alt="Responsive image">
+                </a> 
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="#top">Principal <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#encabezado">Datos Personales</a>
+                    <a class="nav-item nav-link" href="#objetivo">Objetivo Laboral</a>
+                    <a class="nav-item nav-link" href="#educacion">Educacion</a>
+                    <a class="nav-item nav-link" href="#enlaces">Enlaces</a>
+                    <a class="nav-item nav-link" href="#certificacion">Certificaciones</a>
+                    <!-- <a class="nav-item nav-link"> -->
+                                <!-- Button trigger modal -->
+                    <a routerLink="contact-form">
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#miModal" (clic)="(onClick)">
+                            Contacto
+                        </button>
+                    </a>
+
+                    <div [hidden]="!isLoggedin">
+                        <p>Hola,{{ loggedinUser }}!</p><button type="button" class="btn btn-secondary" data-bs-dismiss="modal" [ngStyle]="{'margin-left':'15px'}" (click)="doLogout()"
+                        >log out</button>
+                    </div>
+
+                   <div [hidden]="isLoggedin"> 
+                       <a routerLink="login"> <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#miLogin" [ngStyle]="{'margin-left':'15px'}" (clic)="onLogin()">
+                            Login
+                        </button>              
+                        </a>                
+                    </div>
+                
+                    <!--</a>-->
+                    </div>
+                </div>
+            </nav>        
+        </div>
+    </div>
+</div>
