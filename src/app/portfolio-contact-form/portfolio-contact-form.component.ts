@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { ContactFormService} from '../service/contact-form.service'; 
 import { Validators,FormGroup,FormControl,NgForm } from '@angular/forms';
 
@@ -7,11 +7,13 @@ import { Validators,FormGroup,FormControl,NgForm } from '@angular/forms';
   templateUrl: './portfolio-contact-form.component.html',
   styleUrls: ['./portfolio-contact-form.component.css']
 })
-export class PortfolioContactFormComponent {
+export class PortfolioContactFormComponent implements OnInit{
 
   @ViewChild('contactForm') contactForm!: NgForm;
+  formModal:any;
 
-  nomYape:string="";
+  nombre:string="";
+  apellido:string="";
   email:string="";
   mensaje:string="";
   submitMessageOk=false;
@@ -19,8 +21,8 @@ export class PortfolioContactFormComponent {
   constructor(private contactFormService:ContactFormService) { }
 
   onSubmit(){
-    const {nomYape,email,mensaje}=this;
-    const nuevoContacto = {nomYape,email,mensaje};
+    const {nombre,apellido,email,mensaje}=this;
+    const nuevoContacto = {nombre,apellido,email,mensaje};
     this.contactFormService.addContacto(nuevoContacto).subscribe();
     //alert ("Su mensaje ha sido enviado");
     this.submitMessageOk=true;
@@ -31,5 +33,9 @@ export class PortfolioContactFormComponent {
     this.contactForm.reset();
   }
 
+  ngOnInit(){
+    console.log("hola");
+
+  }
 
 }

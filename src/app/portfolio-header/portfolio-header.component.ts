@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonService } from '../service/common.service';
 import { LoginService } from '../service/login.service';
 
 @Component({
@@ -13,8 +14,9 @@ export class PortfolioHeaderComponent implements OnInit {
   isLoggedin = false;
 	
 	loggedinUser: string = '';
+  
 
-  constructor(private router:Router,private loginService:LoginService) { }
+  constructor(private router:Router,private loginService:LoginService, private commonService:CommonService ) { }
 
   ngOnInit() {
     this.isLoggedin = this.loginService.isUserLoggedin();
@@ -30,7 +32,7 @@ export class PortfolioHeaderComponent implements OnInit {
   doLogout() {
 		this.loginService.logout();
     this.isLoggedin = this.loginService.isUserLoggedin();
-
+    this.commonService.sendUpdate(false);
     this.reloadCurrentRoute();
 	}
 

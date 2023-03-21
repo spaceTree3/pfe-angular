@@ -1,6 +1,7 @@
     <!-- Modal -->
-    <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="miModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <div class="modal fade" data-bs-config={backdrop:true} id="miModal" tabindex="-1" role="dialog" aria-labelledby="miModalLabel" aria-hidden="true">
+        <!-- <div class="modal-dialog" role="document"> -->
+            <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="miModalLabel">Contacto</h5>
@@ -11,9 +12,13 @@
                 <div class="modal-body">
                     <form #contactForm="ngForm" id="formulario" (ngSubmit)="onSubmit()">
                         <div class="form-group">
-                        <label for="nombreYapellido">Nombre y Apellido</label>
-                        <input type="text" class="form-control" id="nombreYapellido" placeholder="Ingrese su Nombre y Apellido" reuired [(ngModel)]="nomYape" name="nomYape">
+                        <label for="nombreContacto">Nombre</label>
+                        <input type="text" class="form-control" id="nom" placeholder="Ingrese su Nombre" required [(ngModel)]="nombre" name="nombreContacto">
                         </div>
+                        <div class="form-group">
+                            <label for="apellidoContacto">Apellido</label>
+                            <input type="text" class="form-control" id="ape" placeholder="Ingrese su Apellido" required [(ngModel)]="apellido" name="apellidoContacto">
+                        </div>    
                         <div class="form-group">
                             <label for="email">Correo Electronico</label>
                             <input type="email" class="form-control" id="email" placeholder="Ingrese email" required email [(ngModel)]="email" name="email">
@@ -25,7 +30,6 @@
 
                         <div class="modal-footer">
                             <div class="form-group">
-                                
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" [ngStyle]="{'margin-right':'15px'}" (click)="onClose($event)"
                                     >Cerrar</button>
                                     <button type="submit" class="btn btn-success" [disabled]="!contactForm.valid">Enviar</button>
@@ -41,3 +45,4 @@
             </div>
         </div>
 </div>
+

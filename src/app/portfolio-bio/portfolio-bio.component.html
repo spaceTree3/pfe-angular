@@ -9,7 +9,7 @@
         </button>
         <div [hidden]="!update">
             <label for="telefono">Tel (15 caracteres):</label>
-            <input type="number" id="telefono" name="telefono" required
+            <input type="number" id="telefono" name="telefono" [(ngModel)]="telefono" required
                minlength="15" maxlength="15" size="10">
             <button type="button" (click)="cambiarTelefono(telefono)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
@@ -32,7 +32,7 @@
         </button>
         <div [hidden]="!update">
             <label for="email">Email (40 caracteres):</label>
-            <input type="text" id="email" name="email" required
+            <input type="text" id="email" name="email" [(ngModel)]="email" required
                minlength="20" maxlength="40" size="10">
             <button type="button" (click)="cambiarEmail(email)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">

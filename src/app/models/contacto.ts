@@ -1,6 +1,7 @@
 export interface Contacto{
     id?:number,
-    nomYape:string,
+    nombre:string,
+    apellido:string,
     email:string,
     mensaje:string
 }

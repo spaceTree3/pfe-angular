@@ -11,7 +11,7 @@
                 </div>
                 
                 <div class="modal-body">
-                    <form #loginForm="ngForm" id="formulario" (ngSubmit)="onSubmit()">
+                    <form #loginForm="ngForm" id="formularioLogin" (ngSubmit)="onSubmit()">
                         <div class="form-group">
                         <label for="usuario">usuario</label>
                         <input type="text" class="form-control" id="usuario" placeholder="Ingrese Usuario" required [(ngModel)]="usuario" name="usuario">
