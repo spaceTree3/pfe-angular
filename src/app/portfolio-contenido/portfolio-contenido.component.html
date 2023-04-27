@@ -94,7 +94,7 @@
                 <div class="col">
                     <div id="certificacion">
                         <h3>Certificacion</h3>
-                        <app-portfolio-certificacion [certificacion]="certificacion">
+                        <app-portfolio-certificacion (certificadoBorrado)="getCertificadoBorradoMessage($event)" (certificadoAgregado)="getCertificadoAgregadoMessage($event)" [certificacion]="certificacion">
                         </app-portfolio-certificacion>
                     </div>        
                 </div>

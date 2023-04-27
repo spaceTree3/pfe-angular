@@ -34,7 +34,7 @@ export class PortfolioContactFormComponent implements OnInit{
   }
 
   ngOnInit(){
-    console.log("hola");
+//    console.log("hola");
 
   }
 
